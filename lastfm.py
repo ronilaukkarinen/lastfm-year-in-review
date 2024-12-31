@@ -1,10 +1,15 @@
 import pylast
 from datetime import datetime
 import time
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Initialize Last.fm API
-API_KEY = "ba9c13e15382404dfb046dbbecac3424"
-USERNAME = "rolle-"
+API_KEY = os.getenv('LASTFM_API_KEY')
+USERNAME = os.getenv('LASTFM_USERNAME')
 
 # Initialize network without authentication
 network = pylast.LastFMNetwork(api_key=API_KEY)
